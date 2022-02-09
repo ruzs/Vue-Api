@@ -1,0 +1,26 @@
+#app
+  .header 網頁復刻 Vue.js api串接
+  .banner
+    .center_banner
+      img(src="https://2017.awiclass.monoame.com/img/hahow_progress.png")
+  .classes
+    a.classbox(v-for="cls in classdatas" v-bind:href="'https://hahow.in/courses/'+cls._id" target="_blank")
+      .teacher(v-bind:style="'background-image:url('+cls.owner.profileImageUrl+')'")
+      .top 
+        .classpicture(v-bind:style="'background-image:url('+cls.coverImage.url+')'")
+        .tag 募資中
+        .bookbtn
+          i.fa.fa-bookmark-o
+      .bottom
+        h1.classtitle {{cls.title}}
+        .texts
+          .pricerow 
+            .preprice 預購價
+              span.orange NT${{cls.preOrderedPrice}}
+            .lastday 剩
+              span.orange {{parseInt((new Date(cls.proposalDueTime)-new Date('2016/10/14'))/1000/60/60/24)}}天
+          .progressbar
+            .valuebar(v-bind:style="'width:'+220*cls.numSoldTickets/cls.successCriteria.numSoldTickets+'px'")
+          .nowpeople 已募資
+            span.orange {{cls.numSoldTickets}}/{{cls.successCriteria.numSoldTickets}}人
+        .orangebar

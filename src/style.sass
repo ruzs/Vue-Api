@@ -1,0 +1,227 @@
+//顏色定義區(橘/灰/深橘)
+$color_orange: #FA8B00
+$color_grey: #f3f3f1
+$color_dark_orange: #EB5E00
+$color_yellow: #FFE18D
+$color_dark_yellow: #FFDA71
+$color_dark_grey: #4F4C4B
+
+//尺寸定義區 (標題/內文/書籤按鈕/書籤icon/老師icon)
+$size_title: 25px
+$size_para: 15px
+$size_bookbtn: 42px
+$size_icon: 22px
+$size_teacher: 55px
+
+//尺寸(課程/上下半部/進度條/預購價/底部橘條)
+$width_class: 260px
+$height_toppart: 160px
+$height_bottompart: 184px
+$height_progressbar: 10px
+$height_pricerow: 22px
+$height_bottomorange: 5px
+
+//尺寸(課程框框的padding)
+$padding_class: 15px
+
+//預設圖片Url
+$url_teacher: "https://hahow.in/images/57ab3d5585b097070042067a"
+$url_class: "https://hahow.in/images/574fab4f206cd60900c52a67?width=300"
+
+
+*
+  //border: solid 1px
+  font-family: "Heiti TC","HeitiTC-Light","LiHei","微軟正黑體","Lato","Verdana"
+  color: $color_dark_grey
+  vertical-align: top
+
+@mixin ab_center
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+
+html,body
+  margin: 0
+  padding: 0
+
+body
+  background-color: $color_grey
+  
+  
+@mixin size($w,$h)
+  width: $w
+  height: $h
+  
+.header
+  font-family: 圓體-繁
+  font-weight: bold
+  height: 50px
+  padding: 20px
+  font-size: 30px
+  
+.orange
+  color: $color_orange
+  font-weight: 500
+  padding-left: 3px
+
+.classes
+  margin-top: 50px
+  max-width: $width_class*4+30px*4
+  margin-left: auto
+  margin-right: auto
+  
+.classbox
+  width: $width_class
+  padding: $padding_class
+  padding-bottom: 0px
+  box-sizing: border-box
+  //overflow: hidden
+  background-color: white
+  border-radius: 5px
+  box-shadow: 0px 0px 12px rgba(#000,0.2)
+  position: relative
+  cursor: pointer
+  display: inline-block
+  margin: 25px 15px
+  text-align: left
+  
+  text-decoration: none
+  
+  &:hover
+    & .classpicture
+      transform: scale(1.15)
+    & .bookbtn
+      bottom: 10px
+      
+.top
+  height: $height_toppart
+  border-radius: 5px 5px 0px 0px
+  margin: -15px
+  margin-bottom: 0px
+  overflow: hidden
+  position: relative
+    
+  & .tag
+    width: 100%
+    text-align: center
+    padding: 5px 0px
+    transform: translateX(95px) translateY(15px) rotate(45deg)
+    background-color: #EB5E00
+    font-weight: 900
+    color: white
+    box-shadow: 0px 0px 5px rgba(#fff,0.5)
+    
+  & .classpicture
+    +size(100%,100%)
+    position: absolute
+    background-image: url($url_class)
+    background-size: cover
+    transition-duration: 0.3s 
+    
+  & .bookbtn
+    +size($size_bookbtn,$size_bookbtn)
+    background-color: white
+    position: absolute
+    border-radius: 100%
+    left: $padding_class
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.2)
+    bottom: -50px
+    
+    transition: bottom 0.4s
+    text-align: center
+
+    & i
+      font-size: $size_icon
+      font-weight: 500
+      color: $color_orange
+      +ab_center
+    &:hover
+      background-color: $color_dark_orange
+      & i
+        color: white
+  
+    
+.teacher
+  position: absolute
+  top: -$size_teacher/2
+  width: $size_teacher
+  height: $size_teacher
+  background-image: url($url_teacher)
+  background-size: cover
+  border: solid 2px white
+  border-radius: 100%
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.12)
+  z-index: 10
+    
+    
+.bottom
+  height: $height_bottompart
+  position: relative
+
+.classtitle
+  margin-top: 13px
+  font-size: $size_title
+
+.texts
+  font-size: $size_para
+  padding-top: 0px
+  padding-bottom: 4px
+  letter-spacing: 1px
+  font-weight: 400
+  
+.pricerow 
+  height: $height_pricerow
+  position: relative
+  padding-bottom: 7px
+  
+  .preprice,.lastday
+    display: inline-block
+    position: absolute
+
+  .lastday
+    right: 0px
+  
+.progressbar
+  height: $height_progressbar
+  border-radius: 5px
+  overflow: hidden 
+  background-color: rgba(0,0,0,0.12)
+  
+  .valuebar
+    background-color: $color_orange
+    width: 30px
+    height: 100%
+    transition-duration: 1s
+  
+.nowpeople 
+  padding: 10px
+  padding-top: 5px
+  padding-bottom: 0px
+  text-align: center
+  
+.orangebar
+  position: absolute
+  bottom: 0px
+  height: $height_bottomorange
+  background-color: $color_dark_orange
+  width: 100%
+  margin: 0px (-$padding_class)
+  padding: 0px $padding_class
+  border-radius: 0px 0px 5px 5px
+  
+.banner
+  height: 400px
+  background: linear-gradient(-45deg,$color_yellow 10%,$color_yellow 10%,$color_dark_yellow 10%,$color_dark_yellow 40%,$color_yellow 40%,$color_yellow 60%,$color_dark_yellow 60%,$color_dark_yellow 90%,$color_yellow 90%,$color_yellow 100%)
+  background-size: 46px 46px
+  position: relative
+  .center_banner
+    display: inline-block
+    background-color: #fff
+    padding: 20px 30px
+    border-radius: 5px
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.3)
+    +ab_center
+    img
+      width: 1000px
+      

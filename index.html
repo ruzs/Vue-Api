@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js-綜合案例-hahow課程資料</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <div class="header">網頁復刻 Vue.js api串接</div>
+  <div class="banner">
+    <div class="center_banner"><img src="https://2017.awiclass.monoame.com/img/hahow_progress.png"/></div>
+  </div>
+  <div class="classes"><a class="classbox" v-for="cls in classdatas" v-bind:href="'https://hahow.in/courses/'+cls._id" target="_blank">
+      <div class="teacher" v-bind:style="'background-image:url('+cls.owner.profileImageUrl+')'"></div>
+      <div class="top"> 
+        <div class="classpicture" v-bind:style="'background-image:url('+cls.coverImage.url+')'"></div>
+        <div class="tag">募資中</div>
+        <div class="bookbtn"><i class="fa fa-bookmark-o"></i></div>
+      </div>
+      <div class="bottom">
+        <h1 class="classtitle">{{cls.title}}</h1>
+        <div class="texts">
+          <div class="pricerow"> 
+            <div class="preprice">預購價<span class="orange">NT${{cls.preOrderedPrice}}</span></div>
+            <div class="lastday">剩<span class="orange">{{parseInt((new Date(cls.proposalDueTime)-new Date('2016/10/14'))/1000/60/60/24)}}天</span></div>
+          </div>
+          <div class="progressbar">
+            <div class="valuebar" v-bind:style="'width:'+220*cls.numSoldTickets/cls.successCriteria.numSoldTickets+'px'"></div>
+          </div>
+          <div class="nowpeople">已募資<span class="orange">{{cls.numSoldTickets}}/{{cls.successCriteria.numSoldTickets}}人</span></div>
+        </div>
+        <div class="orangebar"></div>
+      </div></a></div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+@charset "UTF-8";
+* {
+  font-family: "Heiti TC", "HeitiTC-Light", "LiHei", "微軟正黑體", "Lato", "Verdana";
+  color: #4F4C4B;
+  vertical-align: top;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f3f3f1;
+}
+
+.header {
+  font-family: 圓體-繁;
+  font-weight: bold;
+  height: 50px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.orange {
+  color: #FA8B00;
+  font-weight: 500;
+  padding-left: 3px;
+}
+
+.classes {
+  margin-top: 50px;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.classbox {
+  width: 260px;
+  padding: 15px;
+  padding-bottom: 0px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin: 25px 15px;
+  text-align: left;
+  text-decoration: none;
+}
+.classbox:hover .classpicture {
+  transform: scale(1.15);
+}
+.classbox:hover .bookbtn {
+  bottom: 10px;
+}
+
+.top {
+  height: 160px;
+  border-radius: 5px 5px 0px 0px;
+  margin: -15px;
+  margin-bottom: 0px;
+  overflow: hidden;
+  position: relative;
+}
+.top .tag {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0px;
+  transform: translateX(95px) translateY(15px) rotate(45deg);
+  background-color: #EB5E00;
+  font-weight: 900;
+  color: white;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+.top .classpicture {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("https://hahow.in/images/574fab4f206cd60900c52a67?width=300");
+  background-size: cover;
+  transition-duration: 0.3s;
+}
+.top .bookbtn {
+  width: 42px;
+  height: 42px;
+  background-color: white;
+  position: absolute;
+  border-radius: 100%;
+  left: 15px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  bottom: -50px;
+  transition: bottom 0.4s;
+  text-align: center;
+}
+.top .bookbtn i {
+  font-size: 22px;
+  font-weight: 500;
+  color: #FA8B00;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.top .bookbtn:hover {
+  background-color: #EB5E00;
+}
+.top .bookbtn:hover i {
+  color: white;
+}
+
+.teacher {
+  position: absolute;
+  top: -27.5px;
+  width: 55px;
+  height: 55px;
+  background-image: url("https://hahow.in/images/57ab3d5585b097070042067a");
+  background-size: cover;
+  border: solid 2px white;
+  border-radius: 100%;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+.bottom {
+  height: 184px;
+  position: relative;
+}
+
+.classtitle {
+  margin-top: 13px;
+  font-size: 25px;
+}
+
+.texts {
+  font-size: 15px;
+  padding-top: 0px;
+  padding-bottom: 4px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.pricerow {
+  height: 22px;
+  position: relative;
+  padding-bottom: 7px;
+}
+.pricerow .preprice, .pricerow .lastday {
+  display: inline-block;
+  position: absolute;
+}
+.pricerow .lastday {
+  right: 0px;
+}
+
+.progressbar {
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.progressbar .valuebar {
+  background-color: #FA8B00;
+  width: 30px;
+  height: 100%;
+  transition-duration: 1s;
+}
+
+.nowpeople {
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+
+.orangebar {
+  position: absolute;
+  bottom: 0px;
+  height: 5px;
+  background-color: #EB5E00;
+  width: 100%;
+  margin: 0px -15px;
+  padding: 0px 15px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.banner {
+  height: 400px;
+  background: linear-gradient(-45deg, #FFE18D 10%, #FFE18D 10%, #FFDA71 10%, #FFDA71 40%, #FFE18D 40%, #FFE18D 60%, #FFDA71 60%, #FFDA71 90%, #FFE18D 90%, #FFE18D 100%);
+  background-size: 46px 46px;
+  position: relative;
+}
+.banner .center_banner {
+  display: inline-block;
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner .center_banner img {
+  width: 1000px;
+}
